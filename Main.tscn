@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player/Bordas.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cenario/Chao.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+[ext_resource path="res://Cenario/Plataforma.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Level" type="Node" parent="."]
+
+[node name="Bordas" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 194, 85 )
+speed = 300
+jump_speed = 1300
+gravity = 2100
+
+[node name="Camera2D" type="Camera2D" parent="Level/Bordas"]
+position = Vector2( 96, 28 )
+offset = Vector2( 0, -70 )
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Limite" type="Position2D" parent="Level"]
+position = Vector2( 328, 455 )
+
+[node name="Cenario" type="Node" parent="Level"]
+
+[node name="Chão" parent="Level/Cenario" instance=ExtResource( 2 )]
+position = Vector2( -22, 118 )
+
+[node name="Plataforma" parent="Level/Cenario" instance=ExtResource( 4 )]
+position = Vector2( -8, -4 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HUD"]
+margin_right = 40.0
+margin_bottom = 14.0
