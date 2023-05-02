@@ -11,13 +11,12 @@ script = ExtResource( 3 )
 [node name="Level" type="Node" parent="."]
 
 [node name="Bordas" parent="Level" instance=ExtResource( 1 )]
-position = Vector2( 194, 85 )
-speed = 300
-jump_speed = 1300
-gravity = 2100
+position = Vector2( -252, -137 )
+speed = 500
+gravity = 2000
 
 [node name="Camera2D" type="Camera2D" parent="Level/Bordas"]
-position = Vector2( 96, 28 )
+position = Vector2( 92, 46 )
 offset = Vector2( 0, -70 )
 current = true
 drag_margin_h_enabled = true
@@ -35,7 +34,19 @@ position = Vector2( 328, 455 )
 position = Vector2( -22, 118 )
 
 [node name="Plataforma" parent="Level/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -8, -4 )
+position = Vector2( -163, -168 )
+
+[node name="Plataforma2" parent="Level/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 323, -48 )
+
+[node name="Plataforma3" parent="Level/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 315, -328 )
+
+[node name="Plataforma4" parent="Level/Cenario" instance=ExtResource( 4 )]
+position = Vector2( -677, -168 )
+
+[node name="Plataforma5" parent="Level/Cenario" instance=ExtResource( 4 )]
+position = Vector2( -417, -168 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
