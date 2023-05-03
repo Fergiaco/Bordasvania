@@ -30,6 +30,10 @@ func get_side_input():
 		#b.position = global_position
 		#owner.add_child(b)
 	#print(velocity)
+	
+	if Input.is_key_pressed(KEY_X):
+		print("x apertado")
+	
 		
 func _physics_process(delta):
 	get_side_input()	

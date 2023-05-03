@@ -19,7 +19,7 @@ margin_left = -4671.0
 margin_top = -1868.0
 margin_right = 5920.0
 margin_bottom = 2220.0
-color = Color( 0.243137, 0.0156863, 0.0352941, 1 )
+color = Color( 0.156863, 0.0352941, 0.0784314, 1 )
 
 [node name="Chão" parent="Castelo/Cenario" instance=ExtResource( 2 )]
 position = Vector2( -1211, 148 )
@@ -95,3 +95,5 @@ margin_top = -1233.0
 margin_right = -2235.0
 margin_bottom = -946.0
 uppercase = true
+
+[node name="Node" type="Node" parent="."]
