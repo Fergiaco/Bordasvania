@@ -15,10 +15,10 @@ script = ExtResource( 3 )
 [node name="Cenario" type="Node" parent="Castelo"]
 
 [node name="ColorRect" type="ColorRect" parent="Castelo/Cenario"]
-margin_left = -3174.0
-margin_top = -1284.0
-margin_right = 3070.0
-margin_bottom = 1435.0
+margin_left = -4671.0
+margin_top = -1868.0
+margin_right = 5920.0
+margin_bottom = 2220.0
 color = Color( 0.243137, 0.0156863, 0.0352941, 1 )
 
 [node name="Chão" parent="Castelo/Cenario" instance=ExtResource( 2 )]
@@ -31,7 +31,19 @@ position = Vector2( 3765, 158 )
 position = Vector2( 323, -48 )
 
 [node name="Plataforma8" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( 838, -335 )
+position = Vector2( 781, -463 )
+
+[node name="Plataforma9" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 1316, -577 )
+
+[node name="Plataforma10" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 817, 936 )
+
+[node name="Plataforma11" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 787, 288 )
+
+[node name="Plataforma12" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 780, 645 )
 
 [node name="Plataforma3" parent="Castelo/Cenario" instance=ExtResource( 4 )]
 position = Vector2( 315, -328 )
@@ -58,12 +70,12 @@ position = Vector2( -3445, -171 )
 position = Vector2( 3582, -171 )
 
 [node name="Bordas" parent="Castelo" instance=ExtResource( 1 )]
-position = Vector2( -2366, 76 )
+position = Vector2( -2362, 152 )
 speed = 500
 gravity = 2000
 
 [node name="Camera2D" type="Camera2D" parent="Castelo/Bordas"]
-position = Vector2( 92, 46 )
+position = Vector2( 213, 102 )
 offset = Vector2( 0, -70 )
 current = true
 drag_margin_h_enabled = true
@@ -73,7 +85,7 @@ __meta__ = {
 }
 
 [node name="Limite" type="Position2D" parent="Castelo"]
-position = Vector2( 328, 455 )
+position = Vector2( 1227, 1609 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
