@@ -1,21 +1,68 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Bordas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Cenario/Chao.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Main.gd" type="Script" id=3]
 [ext_resource path="res://Cenario/Plataforma.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cenario/Pilar.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node2D"]
+position = Vector2( 1, 0 )
 script = ExtResource( 3 )
 
-[node name="Level" type="Node" parent="."]
+[node name="Castelo" type="Node" parent="."]
 
-[node name="Bordas" parent="Level" instance=ExtResource( 1 )]
-position = Vector2( -252, -137 )
+[node name="Cenario" type="Node" parent="Castelo"]
+
+[node name="ColorRect" type="ColorRect" parent="Castelo/Cenario"]
+margin_left = -3174.0
+margin_top = -1284.0
+margin_right = 3070.0
+margin_bottom = 1435.0
+color = Color( 0.243137, 0.0156863, 0.0352941, 1 )
+
+[node name="Chão" parent="Castelo/Cenario" instance=ExtResource( 2 )]
+position = Vector2( -1211, 148 )
+
+[node name="Chão2" parent="Castelo/Cenario" instance=ExtResource( 2 )]
+position = Vector2( 3765, 158 )
+
+[node name="Plataforma2" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 323, -48 )
+
+[node name="Plataforma8" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 838, -335 )
+
+[node name="Plataforma3" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 315, -328 )
+
+[node name="Plataforma6" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( -1143, -328 )
+
+[node name="Plataforma7" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( -1513, -442 )
+
+[node name="Plataforma4" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( -677, -168 )
+
+[node name="Plataforma5" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( -417, -168 )
+
+[node name="Plataforma" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( -163, -168 )
+
+[node name="Pilar1" parent="Castelo/Cenario" instance=ExtResource( 5 )]
+position = Vector2( -3445, -171 )
+
+[node name="Pilar2" parent="Castelo/Cenario" instance=ExtResource( 5 )]
+position = Vector2( 3582, -171 )
+
+[node name="Bordas" parent="Castelo" instance=ExtResource( 1 )]
+position = Vector2( -2366, 76 )
 speed = 500
 gravity = 2000
 
-[node name="Camera2D" type="Camera2D" parent="Level/Bordas"]
+[node name="Camera2D" type="Camera2D" parent="Castelo/Bordas"]
 position = Vector2( 92, 46 )
 offset = Vector2( 0, -70 )
 current = true
@@ -25,31 +72,14 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Limite" type="Position2D" parent="Level"]
+[node name="Limite" type="Position2D" parent="Castelo"]
 position = Vector2( 328, 455 )
-
-[node name="Cenario" type="Node" parent="Level"]
-
-[node name="Chão" parent="Level/Cenario" instance=ExtResource( 2 )]
-position = Vector2( -22, 118 )
-
-[node name="Plataforma" parent="Level/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -163, -168 )
-
-[node name="Plataforma2" parent="Level/Cenario" instance=ExtResource( 4 )]
-position = Vector2( 323, -48 )
-
-[node name="Plataforma3" parent="Level/Cenario" instance=ExtResource( 4 )]
-position = Vector2( 315, -328 )
-
-[node name="Plataforma4" parent="Level/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -677, -168 )
-
-[node name="Plataforma5" parent="Level/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -417, -168 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="HUD"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = -2760.0
+margin_top = -1233.0
+margin_right = -2235.0
+margin_bottom = -946.0
+uppercase = true

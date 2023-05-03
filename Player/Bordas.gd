@@ -3,8 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 200
 export (int) var jump_speed = 1000
 export (int) var gravity = 3000
-#export (float) var rotation_speed = 1.5
-#export (PackedScene) var box : PackedScene
+export (PackedScene) var box : PackedScene
 
 onready var target = position # mesmo que func _ready() ...
 onready var sprite = $Sprite
