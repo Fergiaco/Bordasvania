@@ -3,11 +3,11 @@ extends KinematicBody2D
 export (int) var speed = 200
 export (int) var jump_speed = 1000
 export (int) var gravity = 3000
-export (PackedScene) var box : PackedScene
+#export (PackedScene) var box : PackedScene
 
 onready var target = position # mesmo que func _ready() ...
 onready var sprite = $Sprite
-#onready var box := preload("res://Items/Box.tscn")
+onready var box := preload("res://Cenario/Plataforma.tscn")
 
 var velocity = Vector2.ZERO
 var rotation_dir = 0
@@ -26,18 +26,15 @@ func get_side_input():
 	if Input.is_action_pressed("Jump") and is_on_floor():
 		velocity.y = -jump_speed
 		get_tree().call_group("HUD", "updateScore")
-		#var b = box.instance()
-		#b.position = global_position
-		#owner.add_child(b)
-	#print(velocity)
-	
+
 	if Input.is_key_pressed(KEY_X):
-		print("x apertado")
-	
+		var b = box.instance()
+		b.position = global_position
+		print(global_position)
+		owner.add_child(b)
 		
+	
 func _physics_process(delta):
 	get_side_input()	
 	velocity.y += gravity * delta
-	#print(velocity)
 	velocity = move_and_slide(velocity, Vector2.UP)
-	#move_and_collide(velocity * delta)

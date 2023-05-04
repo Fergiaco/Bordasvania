@@ -7,7 +7,6 @@
 [ext_resource path="res://Cenario/Pilar.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node2D"]
-position = Vector2( 1, 0 )
 script = ExtResource( 3 )
 
 [node name="Castelo" type="Node" parent="."]
@@ -70,7 +69,7 @@ position = Vector2( -3445, -171 )
 position = Vector2( 3582, -171 )
 
 [node name="Bordas" parent="Castelo" instance=ExtResource( 1 )]
-position = Vector2( -2362, 152 )
+position = Vector2( -2386, 168 )
 speed = 500
 gravity = 2000
 
@@ -96,4 +95,11 @@ margin_right = -2235.0
 margin_bottom = -946.0
 uppercase = true
 
-[node name="Node" type="Node" parent="."]
+[node name="Inicio" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Inicio"]
+margin_left = -10036.0
+margin_top = -1883.0
+margin_right = -3223.0
+margin_bottom = 2177.0
+color = Color( 0.0313726, 0.0352941, 0.176471, 1 )
