@@ -13,6 +13,20 @@ onready var direcao = Vector2(1,0)
 var velocity = Vector2.ZERO
 var rotation_dir = 0
 
+var cd_laser=1
+var pode_atirar=true
+var timer = Timer.new()
+
+func _ready() -> void:
+	timer.set_one_shot(true)
+	timer.set_wait_time(cd_laser)
+	timer.connect("timeout",self,"pode_atirar")
+	add_child(timer)
+	
+func pode_atirar():
+	#Implementar timer
+	pode_atirar=true
+	
 func get_side_input():
 	velocity.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")	
 	velocity.x *=  speed
@@ -35,17 +49,14 @@ func get_side_input():
 		velocity.y = -jump_speed
 		get_tree().call_group("HUD", "updateScore")
 
-	if Input.is_action_pressed("Projetil") and pode_atirar():
+	if Input.is_action_pressed("Projetil") and pode_atirar:
 		var l = Laser.instance()
 		l.position = $Posicao_olhos.global_position
 		l.velocidade=direcao
 		l.add_collision_exception_with(get_node("."))
 		owner.add_child(l)
-		
-
-func pode_atirar():
-	#Implementar timer
-	return true
+		pode_atirar=false
+		timer.start()
 	
 func _physics_process(delta):
 	get_side_input()	
