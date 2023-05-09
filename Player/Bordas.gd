@@ -24,8 +24,8 @@ func _ready() -> void:
 	add_child(timer)
 	
 func pode_atirar():
-	#Implementar timer
 	pode_atirar=true
+	get_tree().call_group("HUD", "make_visible")
 	
 func get_side_input():
 	velocity.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")	
@@ -33,12 +33,10 @@ func get_side_input():
 	
 	if velocity.x > 0:
 		sprite.play("Direita")
-		#if direcao!=Vector2(1,0):
 		direcao=Vector2(1,0)
 		
 	elif velocity.x < 0:
 		sprite.play("Esquerda")
-		#if direcao!=Vector2(-1,0):
 		direcao=Vector2(-1,0)
 		
 	else:
@@ -47,8 +45,7 @@ func get_side_input():
 
 	if Input.is_action_pressed("Jump") and is_on_floor():
 		velocity.y = -jump_speed
-		get_tree().call_group("HUD", "updateScore")
-
+		
 	if Input.is_action_pressed("Projetil") and pode_atirar:
 		var l = Laser.instance()
 		l.position = $Posicao_olhos.global_position
@@ -56,6 +53,7 @@ func get_side_input():
 		l.add_collision_exception_with(get_node("."))
 		owner.add_child(l)
 		pode_atirar=false
+		get_tree().call_group("HUD", "make_invisible")
 		timer.start()
 	
 func _physics_process(delta):
