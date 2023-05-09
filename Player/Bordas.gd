@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 200
 export (int) var jump_speed = 1000
 export (int) var gravity = 3000
+export (float) var cd_laser = 1
 #export (PackedScene) var box : PackedScene
 
 onready var target = position 
@@ -10,10 +11,10 @@ onready var sprite = $Sprite
 onready var Laser := preload("res://Ataques/Laser.tscn")
 onready var direcao = Vector2(1,0)
 
+
 var velocity = Vector2.ZERO
 var rotation_dir = 0
 
-var cd_laser=1
 var pode_atirar=true
 var timer = Timer.new()
 
@@ -51,7 +52,8 @@ func get_side_input():
 		l.position = $Posicao_olhos.global_position
 		l.velocidade=direcao
 		l.add_collision_exception_with(get_node("."))
-		owner.add_child(l)
+		owner.get_node("Castelo/Ataques").add_child(l)
+		
 		pode_atirar=false
 		get_tree().call_group("HUD", "make_invisible")
 		timer.start()

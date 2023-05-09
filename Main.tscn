@@ -16,7 +16,6 @@ script = ExtResource( 3 )
 [node name="Cenario" type="Node" parent="Castelo"]
 
 [node name="ColorRect" type="ColorRect" parent="Castelo/Cenario"]
-visible = false
 margin_left = -4671.0
 margin_top = -1868.0
 margin_right = 5920.0
@@ -70,6 +69,8 @@ position = Vector2( -3445, -171 )
 
 [node name="Pilar2" parent="Castelo/Cenario" instance=ExtResource( 5 )]
 position = Vector2( 3582, -171 )
+
+[node name="Ataques" type="Node2D" parent="Castelo"]
 
 [node name="Bordas" parent="Castelo" instance=ExtResource( 1 )]
 position = Vector2( -2215, 225 )
