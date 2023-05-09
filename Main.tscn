@@ -90,14 +90,8 @@ __meta__ = {
 [node name="Posicao_olhos" type="Position2D" parent="Castelo/Bordas"]
 position = Vector2( 9.97046, 1 )
 
-[node name="Inimigo" parent="Castelo" instance=ExtResource( 6 )]
-position = Vector2( -626, -12 )
-
-[node name="Inimigo2" parent="Castelo" instance=ExtResource( 6 )]
-position = Vector2( -1009, 270 )
-
-[node name="Inimigo3" parent="Castelo" instance=ExtResource( 6 )]
-position = Vector2( -1658, 287 )
+[node name="KinematicBody2D" parent="Castelo" instance=ExtResource( 6 )]
+position = Vector2( -1226, 288 )
 
 [node name="Limite" type="Position2D" parent="Castelo"]
 position = Vector2( 1227, 1609 )

@@ -1,18 +1,19 @@
 extends KinematicBody2D
 
+var velocidade=Vector2(1,0)
+var speed = 150
+var desloc = 0
 
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-func teste():
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+func inverte_dir():
+	if velocidade==Vector2(1,0):
+		velocidade = Vector2(-1,0)
+	else:
+		velocidade=Vector2(1,0)
+		
+func _physics_process(delta):
+	var colision=move_and_collide(velocidade*speed*delta)	
+	desloc += delta*speed
+	print(desloc)
+	if desloc>=500:
+		inverte_dir()
+		desloc=0

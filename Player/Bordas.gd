@@ -4,11 +4,14 @@ export (int) var speed = 200
 export (int) var jump_speed = 1000
 export (int) var gravity = 3000
 export (float) var cd_laser = 1
+export (float) var cd_espada = 1
+
 #export (PackedScene) var box : PackedScene
 
 onready var target = position 
 onready var sprite = $Sprite
 onready var Laser := preload("res://Ataques/Laser.tscn")
+onready var Espada := preload("res://Ataques/Espada.tscn")
 onready var direcao = Vector2(1,0)
 
 
@@ -16,17 +19,27 @@ var velocity = Vector2.ZERO
 var rotation_dir = 0
 
 var pode_atirar=true
-var timer = Timer.new()
+var pode_bater=true
+var timer_laser = Timer.new()
+var timer_espada = Timer.new()
 
 func _ready() -> void:
-	timer.set_one_shot(true)
-	timer.set_wait_time(cd_laser)
-	timer.connect("timeout",self,"pode_atirar")
-	add_child(timer)
+	timer_laser.set_one_shot(true)
+	timer_laser.set_wait_time(cd_laser)
+	timer_laser.connect("timeout",self,"pode_atirar")
+	add_child(timer_laser)
+	
+	timer_espada.set_one_shot(true)
+	timer_espada.set_wait_time(cd_espada)
+	timer_espada.connect("timeout",self,"pode_bater")
+	add_child(timer_espada)
 	
 func pode_atirar():
 	pode_atirar=true
 	get_tree().call_group("HUD", "make_visible")
+	
+func pode_bater():
+	pode_bater=true
 	
 func get_side_input():
 	velocity.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")	
@@ -56,7 +69,17 @@ func get_side_input():
 		
 		pode_atirar=false
 		get_tree().call_group("HUD", "make_invisible")
-		timer.start()
+		timer_laser.start()
+		
+	if Input.is_action_pressed("Melee") and pode_bater:
+		var e = Espada.instance()
+		e.position = $Posicao_olhos.global_position
+		e.velocidade=direcao
+		e.add_collision_exception_with(get_node("."))
+		owner.get_node("Castelo/Ataques").add_child(e)
+		
+		pode_bater=false
+		timer_espada.start()
 	
 func _physics_process(delta):
 	get_side_input()	
