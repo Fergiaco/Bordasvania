@@ -6,6 +6,7 @@ var speed=900
 func _physics_process(delta):
 	var colisao = move_and_collide(velocidade*delta*speed)
 	if colisao:
-		print(colisao.collider)
-		print('Laser colidiu')
+		if colisao.collider.is_in_group("Inimigos"):
+			colisao.collider.call("tomou_dano")
+			print('Laser colidiu')
 		self.queue_free()

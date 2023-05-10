@@ -14,7 +14,6 @@ onready var Laser := preload("res://Ataques/Laser.tscn")
 onready var Espada := preload("res://Ataques/Espada.tscn")
 onready var direcao = Vector2(1,0)
 
-
 var velocity = Vector2.ZERO
 var rotation_dir = 0
 

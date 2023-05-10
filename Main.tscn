@@ -73,7 +73,7 @@ position = Vector2( 3582, -171 )
 [node name="Ataques" type="Node2D" parent="Castelo"]
 
 [node name="Bordas" parent="Castelo" instance=ExtResource( 1 )]
-position = Vector2( -2215, 225 )
+position = Vector2( -2215, 235 )
 speed = 500
 gravity = 2000
 
@@ -90,8 +90,11 @@ __meta__ = {
 [node name="Posicao_olhos" type="Position2D" parent="Castelo/Bordas"]
 position = Vector2( 9.97046, 1 )
 
+[node name="Posicao_mao" type="Position2D" parent="Castelo/Bordas"]
+position = Vector2( 31.9055, 46 )
+
 [node name="KinematicBody2D" parent="Castelo" instance=ExtResource( 6 )]
-position = Vector2( -1226, 288 )
+position = Vector2( -1957, 303 )
 
 [node name="Limite" type="Position2D" parent="Castelo"]
 position = Vector2( 1227, 1609 )
@@ -107,10 +110,16 @@ color = Color( 0.0313726, 0.0352941, 0.176471, 1 )
 
 [node name="HUD" type="CanvasLayer" parent="." groups=["HUD"]]
 
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 81.0
+margin_top = 32.0
+margin_right = 235.0
+margin_bottom = 74.0
+
 [node name="Cd_laser" type="ColorRect" parent="HUD" groups=["HUD"]]
-margin_left = 52.0
-margin_top = 33.0
-margin_right = 92.0
-margin_bottom = 73.0
+margin_left = 257.0
+margin_top = 34.0
+margin_right = 297.0
+margin_bottom = 74.0
 color = Color( 0.784314, 0.188235, 0.12549, 1 )
 script = ExtResource( 7 )

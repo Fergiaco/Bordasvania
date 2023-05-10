@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Brodas.png-5b1eadc680541a5014b79504f673cc78.stex"
+path="res://.import/Bordas6.png-d648ab3286bb6d7bf79122e1afa0cdc3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Brodas.png"
-dest_files=[ "res://.import/Brodas.png-5b1eadc680541a5014b79504f673cc78.stex" ]
+source_file="res://Player/Bordas6.png"
+dest_files=[ "res://.import/Bordas6.png-d648ab3286bb6d7bf79122e1afa0cdc3.stex" ]
 
 [params]
 

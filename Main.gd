@@ -17,9 +17,6 @@ func _physics_process(delta: float) -> void:
 	if player.position.y > sceneLimit.position.y:
 		get_tree().change_scene("res://GameOver.tscn")
 		
-	#if Input.is_key_pressed(KEY_X):
-	#	call_deferred("goto_scene", "res://GameOver.tscn")
-				
 func goto_scene(path: String):
 	print("Total children: "+str(get_child_count()))
 	var world := get_child(0)
