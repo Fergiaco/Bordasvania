@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/Bordas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Cenario/Chao.tscn" type="PackedScene" id=2]
@@ -6,9 +6,22 @@
 [ext_resource path="res://Cenario/Plataforma.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Cenario/Pilar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Inimigos/Inimigo.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Ataques/Cd_laser.gd" type="Script" id=7]
+[ext_resource path="res://Extra/musica.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Player/rosto.png" type="Texture" id=8]
+[ext_resource path="res://Fonte/Xolonium-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://HUD.gd" type="Script" id=11]
 
-[node name="Main" type="Node2D"]
+[sub_resource type="Theme" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 27
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+font_data = ExtResource( 9 )
+
+[node name="Main" type="Node2D" groups=["Player"]]
 script = ExtResource( 3 )
 
 [node name="Castelo" type="Node" parent="."]
@@ -16,17 +29,20 @@ script = ExtResource( 3 )
 [node name="Cenario" type="Node" parent="Castelo"]
 
 [node name="ColorRect" type="ColorRect" parent="Castelo/Cenario"]
-margin_left = -4671.0
-margin_top = -1868.0
-margin_right = 5920.0
-margin_bottom = 2220.0
+margin_left = -5268.0
+margin_top = -2376.0
+margin_right = 6566.0
+margin_bottom = 3665.0
 color = Color( 0.156863, 0.0352941, 0.0784314, 1 )
 
 [node name="Chão" parent="Castelo/Cenario" instance=ExtResource( 2 )]
-position = Vector2( -1211, 148 )
+position = Vector2( -1778, 746 )
 
 [node name="Chão2" parent="Castelo/Cenario" instance=ExtResource( 2 )]
 position = Vector2( 3765, 158 )
+
+[node name="Chão3" parent="Castelo/Cenario" instance=ExtResource( 2 )]
+position = Vector2( 1810, 2440 )
 
 [node name="Plataforma2" parent="Castelo/Cenario" instance=ExtResource( 4 )]
 position = Vector2( 323, -48 )
@@ -38,42 +54,62 @@ position = Vector2( 781, -463 )
 position = Vector2( 1316, -577 )
 
 [node name="Plataforma10" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( 817, 936 )
+position = Vector2( 1281, 818 )
 
 [node name="Plataforma11" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( 787, 288 )
+position = Vector2( 338, 438 )
 
 [node name="Plataforma12" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( 780, 645 )
+position = Vector2( 802, 629 )
 
 [node name="Plataforma3" parent="Castelo/Cenario" instance=ExtResource( 4 )]
 position = Vector2( 315, -328 )
 
 [node name="Plataforma6" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -1143, -328 )
+position = Vector2( -1285, -33 )
 
 [node name="Plataforma7" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -1513, -442 )
+position = Vector2( -1655, -147 )
 
 [node name="Plataforma4" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -677, -168 )
+position = Vector2( -743, 95 )
 
 [node name="Plataforma5" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -417, -168 )
+position = Vector2( -483, 95 )
 
 [node name="Plataforma" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -163, -168 )
+position = Vector2( -229, 95 )
 
 [node name="Pilar1" parent="Castelo/Cenario" instance=ExtResource( 5 )]
-position = Vector2( -3445, -171 )
+position = Vector2( -3642, -763 )
+scale = Vector2( 0.993958, 0.557625 )
 
 [node name="Pilar2" parent="Castelo/Cenario" instance=ExtResource( 5 )]
-position = Vector2( 3582, -171 )
+position = Vector2( 3584, 788 )
+scale = Vector2( 1.56389, 1.56389 )
+
+[node name="Plataforma13" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( -2685, -313 )
+
+[node name="Plataforma14" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( -2425, -313 )
+
+[node name="Plataforma15" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( -2171, -313 )
+
+[node name="Plataforma16" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 2030, -715 )
+
+[node name="Plataforma17" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 2290, -715 )
+
+[node name="Plataforma18" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+position = Vector2( 2544, -715 )
 
 [node name="Ataques" type="Node2D" parent="Castelo"]
 
-[node name="Bordas" parent="Castelo" instance=ExtResource( 1 )]
-position = Vector2( -2215, 235 )
+[node name="Bordas" parent="Castelo" groups=["Player"] instance=ExtResource( 1 )]
+position = Vector2( -2293, 284 )
 speed = 500
 gravity = 2000
 
@@ -93,33 +129,78 @@ position = Vector2( 9.97046, 1 )
 [node name="Posicao_mao" type="Position2D" parent="Castelo/Bordas"]
 position = Vector2( 31.9055, 46 )
 
-[node name="KinematicBody2D" parent="Castelo" instance=ExtResource( 6 )]
-position = Vector2( -1957, 303 )
+[node name="Inimigo" parent="Castelo" instance=ExtResource( 6 )]
+position = Vector2( -1929, 351 )
+
+[node name="Inimigo2" parent="Castelo" instance=ExtResource( 6 )]
+position = Vector2( -1248, 352 )
+
+[node name="Inimigo3" parent="Castelo" instance=ExtResource( 6 )]
+position = Vector2( -401, 61 )
+
+[node name="Inimigo4" parent="Castelo" instance=ExtResource( 6 )]
+position = Vector2( 2509, -293 )
+
+[node name="Inimigo5" parent="Castelo" instance=ExtResource( 6 )]
+position = Vector2( 1809, 1818 )
 
 [node name="Limite" type="Position2D" parent="Castelo"]
-position = Vector2( 1227, 1609 )
+position = Vector2( -284, 2401 )
+
+[node name="Inimigo6" parent="Castelo" instance=ExtResource( 6 )]
+position = Vector2( -2343, -347 )
+
+[node name="Inimigo7" parent="Castelo" instance=ExtResource( 6 )]
+position = Vector2( 2255, -738 )
+
+[node name="Porta_castelo" type="Position2D" parent="Castelo"]
+position = Vector2( -3250, 71 )
 
 [node name="Inicio" type="Node" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="Inicio"]
-margin_left = -10036.0
-margin_top = -1883.0
-margin_right = -3223.0
-margin_bottom = 2177.0
-color = Color( 0.0313726, 0.0352941, 0.176471, 1 )
-
 [node name="HUD" type="CanvasLayer" parent="." groups=["HUD"]]
+script = ExtResource( 11 )
 
-[node name="Label" type="Label" parent="HUD"]
-margin_left = 81.0
-margin_top = 32.0
-margin_right = 235.0
-margin_bottom = 74.0
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+visible = false
+margin_right = 413.0
+margin_bottom = 108.0
+theme = SubResource( 3 )
+color = Color( 0.337255, 0.32549, 0.396078, 1 )
 
 [node name="Cd_laser" type="ColorRect" parent="HUD" groups=["HUD"]]
-margin_left = 257.0
-margin_top = 34.0
-margin_right = 297.0
-margin_bottom = 74.0
+margin_left = 158.0
+margin_top = 58.0
+margin_right = 198.0
+margin_bottom = 73.0
 color = Color( 0.784314, 0.188235, 0.12549, 1 )
-script = ExtResource( 7 )
+
+[node name="Vidas" type="Label" parent="HUD"]
+margin_left = 100.0
+margin_top = 48.0
+margin_right = 121.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 2 )
+text = "3"
+uppercase = true
+
+[node name="rosto" type="TextureRect" parent="HUD"]
+margin_left = 24.0
+margin_top = 27.0
+margin_right = 423.0
+margin_bottom = 410.0
+rect_scale = Vector2( 0.149925, 0.149925 )
+texture = ExtResource( 8 )
+
+[node name="Score" type="Label" parent="HUD"]
+margin_left = 769.0
+margin_top = 20.0
+margin_right = 832.0
+margin_bottom = 34.0
+rect_scale = Vector2( 2.84471, 2.84471 )
+custom_fonts/font = SubResource( 1 )
+text = "Score: 0"
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -12.133

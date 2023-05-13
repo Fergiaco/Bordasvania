@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Bordas.gd" type="Script" id=1]
 [ext_resource path="res://Player/Bordas.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Ataques/laser.mp3" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 23.9292, 58.5 )
@@ -16,8 +17,12 @@ scale = Vector2( 0.100953, 0.115093 )
 frames = ExtResource( 2 )
 animation = "Direita"
 frame = 2
-speed_scale = 1.5
+speed_scale = 1.45
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 13.9587, 31.5 )
 shape = SubResource( 14 )
+
+[node name="laser" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )

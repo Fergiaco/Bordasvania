@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/laser.mp3-2afa67f5cb1470ff09ad032fd0450160.mp3str"
+
+[deps]
+
+source_file="res://Ataques/laser.mp3"
+dest_files=[ "res://.import/laser.mp3-2afa67f5cb1470ff09ad032fd0450160.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

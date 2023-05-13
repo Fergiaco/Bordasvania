@@ -3,11 +3,12 @@ extends KinematicBody2D
 export (int) var speed = 200
 export (int) var jump_speed = 1000
 export (int) var gravity = 3000
-export (float) var cd_laser = 1
+export (float) var cd_laser = 1.5
 export (float) var cd_espada = 1
+export (int) var hp = 3
+export (int) var cd_inv = 3
 
-#export (PackedScene) var box : PackedScene
-
+onready var audio_laser = $laser
 onready var target = position 
 onready var sprite = $Sprite
 onready var Laser := preload("res://Ataques/Laser.tscn")
@@ -19,8 +20,11 @@ var rotation_dir = 0
 
 var pode_atirar=true
 var pode_bater=true
+var invencivel=false
+
 var timer_laser = Timer.new()
 var timer_espada = Timer.new()
+var timer_inv =Timer.new()
 
 func _ready() -> void:
 	timer_laser.set_one_shot(true)
@@ -33,13 +37,18 @@ func _ready() -> void:
 	timer_espada.connect("timeout",self,"pode_bater")
 	add_child(timer_espada)
 	
+	timer_inv.set_one_shot(true)
+	timer_inv.set_wait_time(cd_espada)
+	timer_inv.connect("timeout",self,"stop_inv")
+	add_child(timer_inv)
+	
 func pode_atirar():
 	pode_atirar=true
-	get_tree().call_group("HUD", "make_visible")
+	get_tree().call_group("HUD", "cd_laser",true)
 	
 func pode_bater():
 	pode_bater=true
-	
+
 func get_side_input():
 	velocity.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")	
 	velocity.x *=  speed
@@ -60,14 +69,17 @@ func get_side_input():
 		velocity.y = -jump_speed
 		
 	if Input.is_action_pressed("Projetil") and pode_atirar:
-		var l = Laser.instance()
+		var l = Laser.instance()	
+		#audio_laser.stop()
 		l.position = $Posicao_olhos.global_position
 		l.velocidade=direcao
 		l.add_collision_exception_with(get_node("."))
 		owner.get_node("Castelo/Ataques").add_child(l)
 		
 		pode_atirar=false
-		get_tree().call_group("HUD", "make_invisible")
+		audio_laser.play()
+		#mudar chamada 
+		get_tree().call_group("HUD", "cd_laser",false)
 		timer_laser.start()
 		
 	if Input.is_action_pressed("Melee") and pode_bater:
@@ -80,6 +92,20 @@ func get_side_input():
 		pode_bater=false
 		timer_espada.start()
 	
+func tomou_dano():
+	if not invencivel:
+		invencivel=true
+		hp-=1
+		if hp<0:
+			get_tree().change_scene("res://GameOver.tscn")
+			
+		timer_inv.start()
+		get_tree().call_group("HUD", "atualiza_vida",hp)
+
+
+func stop_inv():
+	invencivel=false
+
 func _physics_process(delta):
 	get_side_input()	
 	velocity.y += gravity * delta
