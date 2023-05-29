@@ -36,7 +36,7 @@ margin_bottom = 3665.0
 color = Color( 0.156863, 0.0352941, 0.0784314, 1 )
 
 [node name="Chão" parent="Castelo/Cenario" instance=ExtResource( 2 )]
-position = Vector2( -1778, 746 )
+position = Vector2( -1778, 803 )
 
 [node name="Chão2" parent="Castelo/Cenario" instance=ExtResource( 2 )]
 position = Vector2( 3765, 158 )
@@ -81,7 +81,7 @@ position = Vector2( -483, 95 )
 position = Vector2( -229, 95 )
 
 [node name="Pilar1" parent="Castelo/Cenario" instance=ExtResource( 5 )]
-position = Vector2( -3642, -763 )
+position = Vector2( -3642, -685 )
 scale = Vector2( 0.993958, 0.557625 )
 
 [node name="Pilar2" parent="Castelo/Cenario" instance=ExtResource( 5 )]
@@ -142,7 +142,7 @@ position = Vector2( -401, 61 )
 position = Vector2( 2509, -293 )
 
 [node name="Inimigo5" parent="Castelo" instance=ExtResource( 6 )]
-position = Vector2( 1809, 1818 )
+position = Vector2( 1821, 1962 )
 
 [node name="Limite" type="Position2D" parent="Castelo"]
 position = Vector2( -284, 2401 )

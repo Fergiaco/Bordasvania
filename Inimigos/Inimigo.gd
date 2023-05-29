@@ -8,6 +8,7 @@ var gravidade = 3000
 onready var sprite = $Sprite
 export (int) var hp=3
 export (int) var pontos=100
+
 func _ready():
 	sprite.play("Direita")
 	
@@ -28,6 +29,7 @@ func tomou_dano():
 		
 func _physics_process(delta):
 	var colisao=move_and_collide(velocidade*speed*delta)	
+	#velocidade.y=1000
 	if colisao:
 		if colisao.collider.is_in_group("Player"):
 			colisao.collider.call("tomou_dano")
