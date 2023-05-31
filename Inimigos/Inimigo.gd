@@ -4,7 +4,7 @@ var velocidade=Vector2(1,0)
 var speed = 150
 var desloc = 0
 var gravidade = 3000
-
+var direita=true
 onready var sprite = $Sprite
 export (int) var hp=3
 export (int) var pontos=100
@@ -13,12 +13,12 @@ func _ready():
 	sprite.play("Direita")
 	
 func inverte_dir():
-	if velocidade==Vector2(1,0):
-		velocidade = Vector2(-1,0)
+	if direita:
 		sprite.play("Esquerda")
+		direita=false
 	else:
-		velocidade=Vector2(1,0)
 		sprite.play("Direita")
+		direita=true
 		
 func tomou_dano():
 	hp-=1
@@ -27,15 +27,21 @@ func tomou_dano():
 		get_tree().call_group("HUD", "atualiza_pontos",pontos)
 		queue_free()	
 		
+		
 func _physics_process(delta):
-	var colisao=move_and_collide(velocidade*speed*delta)	
+	velocidade.x =  speed
+	velocidade.y += gravidade * delta
+	velocidade = move_and_slide(velocidade, Vector2.UP)
+	#var colisao=move_and_collide(velocidade*speed*delta)	
 	#velocidade.y=1000
-	if colisao:
-		if colisao.collider.is_in_group("Player"):
-			colisao.collider.call("tomou_dano")
-			print(('aaaaa'))
-	desloc += delta*speed
+	#if colisao:
+	#	if colisao.collider.is_in_group("Player"):
+	#		colisao.collider.call("tomou_dano")
+	#		print(('aaaaa'))
+	desloc += abs(delta*speed)
+	print(desloc)
 	#print(desloc)
-	if desloc>=500:
+	if desloc>=420:
+		speed=-speed
 		inverte_dir()
 		desloc=0

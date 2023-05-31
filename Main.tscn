@@ -130,10 +130,10 @@ position = Vector2( 9.97046, 1 )
 position = Vector2( 31.9055, 46 )
 
 [node name="Inimigo" parent="Castelo" instance=ExtResource( 6 )]
-position = Vector2( -1929, 351 )
+position = Vector2( -1317, -69 )
 
 [node name="Inimigo2" parent="Castelo" instance=ExtResource( 6 )]
-position = Vector2( -1248, 352 )
+position = Vector2( -1580, 234 )
 
 [node name="Inimigo3" parent="Castelo" instance=ExtResource( 6 )]
 position = Vector2( -507, 57 )
@@ -148,7 +148,7 @@ position = Vector2( 1821, 1962 )
 position = Vector2( -284, 2401 )
 
 [node name="Inimigo6" parent="Castelo" instance=ExtResource( 6 )]
-position = Vector2( -2343, -347 )
+position = Vector2( -2504, -340 )
 
 [node name="Inimigo7" parent="Castelo" instance=ExtResource( 6 )]
 position = Vector2( 2255, -738 )
