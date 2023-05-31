@@ -13,6 +13,9 @@ func _ready() -> void:
 	player = currentScene.get_node("Bordas")
 	
 func _physics_process(delta: float) -> void:
+	if player.hp <= 0:
+		get_tree().change_scene("res://GameOver.tscn")
+		
 	if sceneLimit == null:
 		return
 		

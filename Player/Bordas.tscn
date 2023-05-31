@@ -10,13 +10,14 @@ extents = Vector2( 23.9292, 58.5 )
 [node name="Bordas" type="KinematicBody2D"]
 scale = Vector2( 1.00296, 1 )
 script = ExtResource( 1 )
+hp = 7
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 8.97344, 48 )
 scale = Vector2( 0.100953, 0.115093 )
 frames = ExtResource( 2 )
 animation = "Direita"
-frame = 2
+frame = 1
 speed_scale = 1.45
 playing = true
 
