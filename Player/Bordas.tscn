@@ -56,7 +56,6 @@ position = Vector2( 8.97344, 48 )
 scale = Vector2( 0.100953, 0.115093 )
 frames = ExtResource( 2 )
 animation = "Direita"
-frame = 1
 speed_scale = 1.45
 playing = true
 

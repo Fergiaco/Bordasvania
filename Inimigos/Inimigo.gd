@@ -6,6 +6,7 @@ var desloc = 0
 var gravidade = 3000
 var direita=true
 onready var sprite = $Sprite
+onready var som_dano=$som_dano
 export (int) var hp=3
 export (int) var pontos=100
 
@@ -22,6 +23,7 @@ func inverte_dir():
 		
 func tomou_dano():
 	hp-=1
+	som_dano.play()
 	if hp==0:
 		print("Inimigo morreu")
 		get_tree().call_group("HUD", "atualiza_pontos",pontos)
@@ -31,8 +33,9 @@ func detecta_colisao():
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if  collision:
-			if collision.collider.is_in_group("Player"):
-				get_tree().call_group("Player", "tomou_dano")
+			if collision.collider:
+				if collision.collider.is_in_group("Player"):
+					get_tree().call_group("Player", "tomou_dano")
 					
 func _physics_process(delta):
 	detecta_colisao()

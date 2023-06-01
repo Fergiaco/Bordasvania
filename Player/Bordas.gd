@@ -76,7 +76,7 @@ func get_side_input():
 		l.position = $Posicao_olhos.global_position
 		l.velocidade=direcao
 		l.add_collision_exception_with(get_node("."))
-		owner.get_node("Castelo/Ataques").add_child(l)
+		owner.get_node("Jogo/Ataques").add_child(l)
 		
 		pode_atirar=false
 		audio_laser.play()
@@ -87,9 +87,9 @@ func get_side_input():
 	if Input.is_action_pressed("Melee") and pode_bater:
 		var e = Espada.instance()
 		e.position = $Posicao_olhos.global_position
-		e.velocidade=direcao
+		#e.velocidade=direcao
 		e.add_collision_exception_with(get_node("."))
-		owner.get_node("Castelo/Ataques").add_child(e)
+		owner.get_node("Jogo/Ataques").add_child(e)
 		
 		pode_bater=false
 		timer_espada.start()

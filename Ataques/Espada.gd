@@ -7,5 +7,5 @@ func _physics_process(delta):
 	var colisao = move_and_collide(velocidade*delta*speed)
 	if colisao:
 		print(colisao.collider)
-		print('Laser colidiu')
+		print('Espada colidiu')
 		self.queue_free()

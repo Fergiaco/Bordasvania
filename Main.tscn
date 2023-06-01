@@ -25,11 +25,13 @@ font_data = ExtResource( 9 )
 position = Vector2( 1, -4 )
 script = ExtResource( 3 )
 
-[node name="Castelo" type="Node" parent="."]
+[node name="Jogo" type="Node" parent="."]
 
-[node name="Cenario" type="Node" parent="Castelo"]
+[node name="Cenario" type="Node" parent="Jogo"]
 
-[node name="ColorRect" type="ColorRect" parent="Castelo/Cenario"]
+[node name="Castelo" type="Node" parent="Jogo/Cenario"]
+
+[node name="ColorRect" type="ColorRect" parent="Jogo/Cenario/Castelo"]
 margin_left = -3613.0
 margin_top = -2535.0
 margin_right = 8221.0
@@ -37,97 +39,113 @@ margin_bottom = 3506.0
 rect_scale = Vector2( 1.24723, 1.29681 )
 color = Color( 0.156863, 0.0352941, 0.0784314, 1 )
 
-[node name="Chão" parent="Castelo/Cenario" instance=ExtResource( 2 )]
+[node name="Chão" parent="Jogo/Cenario/Castelo" instance=ExtResource( 2 )]
 position = Vector2( -1778, 803 )
 
-[node name="Chão5" parent="Castelo/Cenario" instance=ExtResource( 2 )]
-position = Vector2( -4870, 803 )
-
-[node name="Chão2" parent="Castelo/Cenario" instance=ExtResource( 2 )]
+[node name="Chão2" parent="Jogo/Cenario/Castelo" instance=ExtResource( 2 )]
 position = Vector2( 3765, 158 )
 
-[node name="Chão3" parent="Castelo/Cenario" instance=ExtResource( 2 )]
+[node name="Chão3" parent="Jogo/Cenario/Castelo" instance=ExtResource( 2 )]
 position = Vector2( 1601, 2440 )
 
-[node name="Chão4" parent="Castelo/Cenario" instance=ExtResource( 2 )]
+[node name="Chão4" parent="Jogo/Cenario/Castelo" instance=ExtResource( 2 )]
 position = Vector2( 977, 4272 )
 
-[node name="Chão6" parent="Castelo/Cenario" instance=ExtResource( 2 )]
+[node name="Chão6" parent="Jogo/Cenario/Castelo" instance=ExtResource( 2 )]
 position = Vector2( 4694, 4277 )
 
-[node name="Plataforma2" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+[node name="Plataforma2" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( -15, -126 )
 
-[node name="Plataforma8" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+[node name="Plataforma8" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( 776, -418 )
 
-[node name="Plataforma9" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+[node name="Plataforma9" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( 1316, -577 )
 
-[node name="Plataforma10" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+[node name="Plataforma10" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( 1281, 818 )
 
-[node name="Plataforma11" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+[node name="Plataforma11" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( 338, 438 )
 
-[node name="Plataforma12" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+[node name="Plataforma12" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( 802, 629 )
 
-[node name="Plataforma3" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+[node name="Plataforma3" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( 321, -283 )
 
-[node name="Plataforma6" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+[node name="Plataforma6" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( -1285, -33 )
 
-[node name="Plataforma7" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -1655, -147 )
-
-[node name="Plataforma4" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+[node name="Plataforma4" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( -808, 200 )
 
-[node name="Plataforma5" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -483, 95 )
+[node name="Plataforma7" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
+position = Vector2( -1655, -147 )
+scale = Vector2( 1, 1 )
 
-[node name="Plataforma" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -229, 95 )
-
-[node name="Pilar1" parent="Castelo/Cenario" instance=ExtResource( 5 )]
+[node name="Pilar1" parent="Jogo/Cenario/Castelo" instance=ExtResource( 5 )]
 position = Vector2( -3330, -701 )
 scale = Vector2( 0.993958, 0.557625 )
 
-[node name="Pilar2" parent="Castelo/Cenario" instance=ExtResource( 5 )]
-position = Vector2( 3904, 982 )
-scale = Vector2( 1.56389, 1.56389 )
-
-[node name="Pilar3" parent="Castelo/Cenario" instance=ExtResource( 5 )]
+[node name="Pilar3" parent="Jogo/Cenario/Castelo" instance=ExtResource( 5 )]
 position = Vector2( 3553, 3353 )
 scale = Vector2( 0.414777, 0.414777 )
 
-[node name="Plataforma13" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+[node name="Plataforma13" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( -2685, -313 )
 
-[node name="Plataforma14" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -2425, -313 )
-
-[node name="Plataforma15" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( -2171, -313 )
-
-[node name="Plataforma16" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( 2030, -715 )
-
-[node name="Plataforma17" parent="Castelo/Cenario" instance=ExtResource( 4 )]
-position = Vector2( 2290, -715 )
-
-[node name="Plataforma18" parent="Castelo/Cenario" instance=ExtResource( 4 )]
+[node name="Plataforma18" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( 2544, -715 )
 
-[node name="Ataques" type="Node2D" parent="Castelo"]
+[node name="Plataforma17" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
+position = Vector2( 2290, -715 )
 
-[node name="Bordas" parent="Castelo" instance=ExtResource( 1 )]
+[node name="Plataforma16" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
+position = Vector2( 2030, -715 )
+
+[node name="Plataforma15" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
+position = Vector2( -2171, -313 )
+
+[node name="Plataforma14" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
+position = Vector2( -2425, -313 )
+
+[node name="Pilar2" parent="Jogo/Cenario/Castelo" instance=ExtResource( 5 )]
+position = Vector2( 3904, 982 )
+scale = Vector2( 1.56389, 1.56389 )
+
+[node name="Plataforma" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
+position = Vector2( -229, 95 )
+
+[node name="Plataforma5" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
+position = Vector2( -483, 95 )
+
+[node name="Floresta" type="Node" parent="Jogo/Cenario"]
+
+[node name="ColorRect" type="ColorRect" parent="Jogo/Cenario/Floresta"]
+margin_left = -9628.0
+margin_top = -2530.0
+margin_right = -9588.0
+margin_bottom = -2490.0
+rect_scale = Vector2( 151.032, 194.7 )
+color = Color( 0.0627451, 0.0392157, 0.196078, 1 )
+
+[node name="Pilar4" parent="Jogo/Cenario/Floresta" instance=ExtResource( 5 )]
+position = Vector2( -3890, -701 )
+scale = Vector2( 0.993958, 0.557625 )
+
+[node name="Chão5" parent="Jogo/Cenario/Floresta" instance=ExtResource( 2 )]
+position = Vector2( -4870, 803 )
+scale = Vector2( 0.992092, 1 )
+
+[node name="Ataques" type="Node2D" parent="Jogo"]
+
+[node name="Bordas" parent="Jogo" instance=ExtResource( 1 )]
 position = Vector2( -3195, 209 )
 speed = 500
 
-[node name="Camera2D" type="Camera2D" parent="Castelo/Bordas"]
+[node name="Camera2D" type="Camera2D" parent="Jogo/Bordas"]
 position = Vector2( 22.9321, 42 )
 offset = Vector2( 0, -70 )
 current = true
@@ -137,42 +155,38 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Posicao_olhos" type="Position2D" parent="Castelo/Bordas"]
+[node name="Posicao_olhos" type="Position2D" parent="Jogo/Bordas"]
 position = Vector2( 9.97046, 1 )
 
-[node name="Posicao_mao" type="Position2D" parent="Castelo/Bordas"]
+[node name="Posicao_mao" type="Position2D" parent="Jogo/Bordas"]
 position = Vector2( 31.9055, 46 )
 
-[node name="Inimigo" parent="Castelo" instance=ExtResource( 6 )]
+[node name="Inimigo" parent="Jogo" instance=ExtResource( 6 )]
 position = Vector2( -1317, -69 )
 
-[node name="Inimigo2" parent="Castelo" instance=ExtResource( 6 )]
+[node name="Inimigo2" parent="Jogo" instance=ExtResource( 6 )]
 position = Vector2( -1580, 234 )
 
-[node name="Inimigo3" parent="Castelo" instance=ExtResource( 6 )]
+[node name="Inimigo3" parent="Jogo" instance=ExtResource( 6 )]
 position = Vector2( -554, 67 )
 
-[node name="Inimigo4" parent="Castelo" instance=ExtResource( 6 )]
+[node name="Inimigo4" parent="Jogo" instance=ExtResource( 6 )]
 position = Vector2( 2509, -293 )
 
-[node name="Inimigo5" parent="Castelo" instance=ExtResource( 6 )]
+[node name="Inimigo5" parent="Jogo" instance=ExtResource( 6 )]
 position = Vector2( 1821, 1962 )
 
-[node name="Limite" type="Position2D" parent="Castelo"]
-position = Vector2( -284, 2401 )
-
-[node name="Inimigo6" parent="Castelo" instance=ExtResource( 6 )]
+[node name="Inimigo6" parent="Jogo" instance=ExtResource( 6 )]
 position = Vector2( -2504, -340 )
 
-[node name="Inimigo7" parent="Castelo" instance=ExtResource( 6 )]
+[node name="Inimigo7" parent="Jogo" instance=ExtResource( 6 )]
 position = Vector2( 2255, -738 )
 
-[node name="Porta_castelo" type="Position2D" parent="Castelo"]
+[node name="Limite" type="Position2D" parent="Jogo"]
+position = Vector2( -284, 2401 )
+
+[node name="Porta_castelo" type="Position2D" parent="Jogo"]
 position = Vector2( -3592, 62 )
-
-[node name="Inicio" type="Node" parent="."]
-
-[node name="Cenario" type="Node" parent="Inicio"]
 
 [node name="HUD" type="CanvasLayer" parent="." groups=["HUD"]]
 script = ExtResource( 11 )
@@ -200,6 +214,15 @@ custom_fonts/font = SubResource( 2 )
 text = "7"
 uppercase = true
 
+[node name="Area" type="Label" parent="HUD"]
+margin_left = 250.0
+margin_top = 47.0
+margin_right = 597.0
+margin_bottom = 81.0
+custom_fonts/font = SubResource( 2 )
+text = "7"
+uppercase = true
+
 [node name="rosto" type="TextureRect" parent="HUD"]
 margin_left = 24.0
 margin_top = 27.0
@@ -217,6 +240,6 @@ rect_scale = Vector2( 2.84471, 2.84471 )
 custom_fonts/font = SubResource( 1 )
 text = "Score: 0"
 
-[node name="musica" type="AudioStreamPlayer" parent="."]
+[node name="musica_castelo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -35.071

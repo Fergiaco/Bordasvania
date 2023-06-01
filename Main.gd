@@ -4,11 +4,13 @@ var sceneLimit : Position2D
 var porta_castelo : Position2D
 var player : KinematicBody2D
 var currentScene = null
+var area='floresta'
+var musica_cast=false
 
 func _ready() -> void:
-	$musica.play()
 	currentScene = get_child(0)
-	porta_castelo=$Castelo/Porta_castelo
+	porta_castelo=$Jogo/Porta_castelo
+	porta_castelo=$Jogo/Porta_castelo
 	sceneLimit = currentScene.get_node("Limite")
 	player = currentScene.get_node("Bordas")
 	
@@ -24,12 +26,24 @@ func _physics_process(delta: float) -> void:
 	
 	if player.position.y > porta_castelo.position.y:
 		if player.position.x < porta_castelo.position.x:
-			pass
+			area='floresta'
+			musica_cast=false
+			$musica_castelo.stop()
+			
+		else:
+			area='castelo'
+			if not musica_cast:
+				musica_cast=true				
+				$musica_castelo.play()
+		get_tree().call_group("HUD", "mostra_area",area)
+		
+			#get_tree().change_scene("/root/Main/Inicio")
 			#var new_parent = get_node("/root/Main/Inicio")
 			#var old_parent=get_node(player.get_parent().get_path())
 			#print(old_parent.get_parent().get_child(1).get_path())
 			#old_parent.remove_child(player)
 			#new_parent.add_child(player)
+			#pass
 			
 			
 			#get_tree().change_scene("res://GameOver.tscn")

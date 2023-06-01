@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Player/som_dano.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Inimigos/Inimigo.gd" type="Script" id=2]
 [ext_resource path="res://Player/Bordas.tres" type="SpriteFrames" id=3]
 
@@ -12,7 +13,7 @@ script = ExtResource( 2 )
 hp = 2
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0, 1, 0.203922, 1 )
+modulate = Color( 0.054902, 0.443137, 0.0431373, 1 )
 position = Vector2( 1, -18 )
 scale = Vector2( 0.0907348, 0.113146 )
 frames = ExtResource( 3 )
@@ -21,3 +22,8 @@ animation = "Direita"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 8, -32 )
 shape = SubResource( 1 )
+
+[node name="som_dano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -37.56
+pitch_scale = 0.76
