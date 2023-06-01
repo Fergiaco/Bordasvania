@@ -1,18 +1,57 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Bordas.gd" type="Script" id=1]
 [ext_resource path="res://Player/Bordas.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Ataques/laser.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Player/som_dano.mp3" type="AudioStream" id=4]
+
+[sub_resource type="CanvasItemMaterial" id=15]
+
+[sub_resource type="Shader" id=16]
+
+[sub_resource type="ShaderMaterial" id=17]
+next_pass = SubResource( 15 )
+shader = SubResource( 16 )
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 23.9292, 58.5 )
 
-[node name="Bordas" type="KinematicBody2D"]
+[sub_resource type="Animation" id=18]
+resource_name = "dano"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 2,
+"values": [ true, false, true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.921569, 0.12549, 0.12549, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Bordas" type="KinematicBody2D" groups=["Player"]]
 scale = Vector2( 1.00296, 1 )
 script = ExtResource( 1 )
 hp = 7
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+material = SubResource( 17 )
+use_parent_material = true
 position = Vector2( 8.97344, 48 )
 scale = Vector2( 0.100953, 0.115093 )
 frames = ExtResource( 2 )
@@ -27,3 +66,11 @@ shape = SubResource( 14 )
 
 [node name="laser" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+
+[node name="animacao_dano" type="AnimationPlayer" parent="."]
+playback_speed = 1.5
+anims/dano = SubResource( 18 )
+
+[node name="som_dano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -37.56

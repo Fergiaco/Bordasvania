@@ -7,7 +7,7 @@ var desloc=0
 
 func _physics_process(delta):
 	desloc+=speed*delta
-	print(desloc)
+	#print(desloc)
 	if desloc>=alcance:
 		self.queue_free()
 	var colisao = move_and_collide(velocidade*delta*speed)

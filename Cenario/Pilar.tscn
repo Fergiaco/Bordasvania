@@ -6,13 +6,14 @@
 extents = Vector2( 299, 1200 )
 
 [node name="Pilar1" type="StaticBody2D"]
+position = Vector2( -3, -9 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 335, 128 )
+position = Vector2( 7, -2 )
 rotation = 1.57222
 scale = Vector2( 8.15085, 5.79808 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 333, 125 )
+position = Vector2( 5, -11 )
 shape = SubResource( 1 )

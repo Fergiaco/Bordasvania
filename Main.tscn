@@ -30,20 +30,30 @@ script = ExtResource( 3 )
 [node name="Cenario" type="Node" parent="Castelo"]
 
 [node name="ColorRect" type="ColorRect" parent="Castelo/Cenario"]
-margin_left = -5268.0
-margin_top = -2376.0
-margin_right = 6566.0
-margin_bottom = 3665.0
+margin_left = -3613.0
+margin_top = -2535.0
+margin_right = 8221.0
+margin_bottom = 3506.0
+rect_scale = Vector2( 1.24723, 1.29681 )
 color = Color( 0.156863, 0.0352941, 0.0784314, 1 )
 
 [node name="Chão" parent="Castelo/Cenario" instance=ExtResource( 2 )]
 position = Vector2( -1778, 803 )
 
+[node name="Chão5" parent="Castelo/Cenario" instance=ExtResource( 2 )]
+position = Vector2( -4870, 803 )
+
 [node name="Chão2" parent="Castelo/Cenario" instance=ExtResource( 2 )]
 position = Vector2( 3765, 158 )
 
 [node name="Chão3" parent="Castelo/Cenario" instance=ExtResource( 2 )]
-position = Vector2( 1810, 2440 )
+position = Vector2( 1601, 2440 )
+
+[node name="Chão4" parent="Castelo/Cenario" instance=ExtResource( 2 )]
+position = Vector2( 977, 4272 )
+
+[node name="Chão6" parent="Castelo/Cenario" instance=ExtResource( 2 )]
+position = Vector2( 4694, 4277 )
 
 [node name="Plataforma2" parent="Castelo/Cenario" instance=ExtResource( 4 )]
 position = Vector2( -15, -126 )
@@ -82,12 +92,16 @@ position = Vector2( -483, 95 )
 position = Vector2( -229, 95 )
 
 [node name="Pilar1" parent="Castelo/Cenario" instance=ExtResource( 5 )]
-position = Vector2( -3642, -685 )
+position = Vector2( -3330, -701 )
 scale = Vector2( 0.993958, 0.557625 )
 
 [node name="Pilar2" parent="Castelo/Cenario" instance=ExtResource( 5 )]
-position = Vector2( 3584, 788 )
+position = Vector2( 3904, 982 )
 scale = Vector2( 1.56389, 1.56389 )
+
+[node name="Pilar3" parent="Castelo/Cenario" instance=ExtResource( 5 )]
+position = Vector2( 3553, 3353 )
+scale = Vector2( 0.414777, 0.414777 )
 
 [node name="Plataforma13" parent="Castelo/Cenario" instance=ExtResource( 4 )]
 position = Vector2( -2685, -313 )
@@ -109,10 +123,9 @@ position = Vector2( 2544, -715 )
 
 [node name="Ataques" type="Node2D" parent="Castelo"]
 
-[node name="Bordas" parent="Castelo" groups=["Player"] instance=ExtResource( 1 )]
-position = Vector2( -2293, 284 )
+[node name="Bordas" parent="Castelo" instance=ExtResource( 1 )]
+position = Vector2( -3195, 209 )
 speed = 500
-gravity = 2000
 
 [node name="Camera2D" type="Camera2D" parent="Castelo/Bordas"]
 position = Vector2( 22.9321, 42 )
@@ -155,9 +168,11 @@ position = Vector2( -2504, -340 )
 position = Vector2( 2255, -738 )
 
 [node name="Porta_castelo" type="Position2D" parent="Castelo"]
-position = Vector2( -3250, 71 )
+position = Vector2( -3592, 62 )
 
 [node name="Inicio" type="Node" parent="."]
+
+[node name="Cenario" type="Node" parent="Inicio"]
 
 [node name="HUD" type="CanvasLayer" parent="." groups=["HUD"]]
 script = ExtResource( 11 )
@@ -182,7 +197,7 @@ margin_top = 48.0
 margin_right = 121.0
 margin_bottom = 82.0
 custom_fonts/font = SubResource( 2 )
-text = "3"
+text = "7"
 uppercase = true
 
 [node name="rosto" type="TextureRect" parent="HUD"]

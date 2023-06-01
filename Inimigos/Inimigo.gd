@@ -26,21 +26,20 @@ func tomou_dano():
 		print("Inimigo morreu")
 		get_tree().call_group("HUD", "atualiza_pontos",pontos)
 		queue_free()	
-		
-		
+
+func detecta_colisao():
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if  collision:
+			if collision.collider.is_in_group("Player"):
+				get_tree().call_group("Player", "tomou_dano")
+					
 func _physics_process(delta):
+	detecta_colisao()
 	velocidade.x =  speed
 	velocidade.y += gravidade * delta
 	velocidade = move_and_slide(velocidade, Vector2.UP)
-	#var colisao=move_and_collide(velocidade*speed*delta)	
-	#velocidade.y=1000
-	#if colisao:
-	#	if colisao.collider.is_in_group("Player"):
-	#		colisao.collider.call("tomou_dano")
-	#		print(('aaaaa'))
 	desloc += abs(delta*speed)
-	print(desloc)
-	#print(desloc)
 	if desloc>=420:
 		speed=-speed
 		inverte_dir()

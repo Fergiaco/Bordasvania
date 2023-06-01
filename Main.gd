@@ -23,8 +23,17 @@ func _physics_process(delta: float) -> void:
 		get_tree().change_scene("res://GameOver.tscn")
 	
 	if player.position.y > porta_castelo.position.y:
-		if  player.position.x < porta_castelo.position.x:
-			get_tree().change_scene("res://GameOver.tscn")
+		if player.position.x < porta_castelo.position.x:
+			pass
+			#var new_parent = get_node("/root/Main/Inicio")
+			#var old_parent=get_node(player.get_parent().get_path())
+			#print(old_parent.get_parent().get_child(1).get_path())
+			#old_parent.remove_child(player)
+			#new_parent.add_child(player)
+			
+			
+			#get_tree().change_scene("res://GameOver.tscn")
+			#get_tree().change_scene("res://Main/Castelo.tscn")
 		
 		
 func goto_scene(path: String):

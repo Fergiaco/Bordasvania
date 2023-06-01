@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
-export (int) var jump_speed = 1000
+export (int) var jump_speed = 1300
 export (int) var gravity = 3000
 export (float) var cd_laser = 1.5
 export (float) var cd_espada = 1
@@ -9,6 +9,8 @@ export (int) var hp = 3
 export (int) var cd_inv = 3
 
 onready var audio_laser = $laser
+onready var animacao_dano=$animacao_dano
+onready var som_dano=$som_dano
 onready var target = position 
 onready var sprite = $Sprite
 onready var Laser := preload("res://Ataques/Laser.tscn")
@@ -95,18 +97,31 @@ func get_side_input():
 func tomou_dano():
 	if not invencivel:
 		invencivel=true
+		som_dano.play()
+		animacao_dano.play("dano")
 		hp-=1
 		if hp<0:
+			som_dano.play()
 			get_tree().change_scene("res://GameOver.tscn")
 			
 		timer_inv.start()
 		get_tree().call_group("HUD", "atualiza_vida",hp)
-
-
+		
+func detecta_colisao():
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.is_in_group("Inimigos"):
+			tomou_dano()
+			
 func stop_inv():
 	invencivel=false
+	animacao_dano.stop()
+	som_dano.stop()
 
 func _physics_process(delta):
 	get_side_input()	
 	velocity.y += gravity * delta
-	velocity = move_and_slide(velocity, Vector2.UP)
+	velocity=move_and_slide(velocity, Vector2.UP)
+	detecta_colisao()
+	
+	
