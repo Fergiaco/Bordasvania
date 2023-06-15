@@ -6,7 +6,7 @@ export (int) var gravity = 3000
 export (float) var cd_laser = 1.5
 export (float) var cd_espada = 1
 export (int) var hp = 3
-export (int) var cd_inv = 3
+export (float) var cd_inv = 3
 
 onready var audio_laser = $laser
 onready var animacao_dano=$animacao_dano
@@ -15,6 +15,7 @@ onready var target = position
 onready var sprite = $Sprite
 onready var Laser := preload("res://Ataques/Laser.tscn")
 onready var Espada := preload("res://Ataques/Espada.tscn")
+#onready var Asa := preload("res://Ataques/Asa.tscn")
 onready var direcao = Vector2(1,0)
 
 var velocity = Vector2.ZERO
@@ -29,6 +30,7 @@ var timer_espada = Timer.new()
 var timer_inv =Timer.new()
 
 func _ready() -> void:
+	
 	timer_laser.set_one_shot(true)
 	timer_laser.set_wait_time(cd_laser)
 	timer_laser.connect("timeout",self,"pode_atirar")
@@ -40,7 +42,7 @@ func _ready() -> void:
 	add_child(timer_espada)
 	
 	timer_inv.set_one_shot(true)
-	timer_inv.set_wait_time(cd_espada)
+	timer_inv.set_wait_time(cd_inv)
 	timer_inv.connect("timeout",self,"stop_inv")
 	add_child(timer_inv)
 	
@@ -90,9 +92,21 @@ func get_side_input():
 		#e.velocidade=direcao
 		e.add_collision_exception_with(get_node("."))
 		owner.get_node("Jogo/Ataques").add_child(e)
-		
+
 		pode_bater=false
 		timer_espada.start()
+		
+	if Input.is_action_pressed("Planar"):
+		$Sprite_asa.visible=true
+		#a.position = $Pos_asa.global_position
+		#a.get_node("Sprite_asa").visible=true
+		if velocity.y>10:
+			gravity=500
+		else:
+			gravity=3000
+	else:
+		$Sprite_asa.visible=false
+		gravity=3000
 	
 func tomou_dano():
 	if not invencivel:

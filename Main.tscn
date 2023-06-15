@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player/Bordas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Cenario/Chao.tscn" type="PackedScene" id=2]
@@ -9,7 +9,9 @@
 [ext_resource path="res://Extra/musica.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Player/rosto.png" type="Texture" id=8]
 [ext_resource path="res://Fonte/Xolonium-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Cenario/vitral.png" type="Texture" id=10]
 [ext_resource path="res://HUD.gd" type="Script" id=11]
+[ext_resource path="res://Cenario/arvore1.png" type="Texture" id=12]
 
 [sub_resource type="Theme" id=3]
 
@@ -83,7 +85,6 @@ position = Vector2( -808, 200 )
 
 [node name="Plataforma7" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( -1655, -147 )
-scale = Vector2( 1, 1 )
 
 [node name="Pilar1" parent="Jogo/Cenario/Castelo" instance=ExtResource( 5 )]
 position = Vector2( -3330, -701 )
@@ -121,6 +122,14 @@ position = Vector2( -229, 95 )
 [node name="Plataforma5" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( -483, 95 )
 
+[node name="TextureRect" type="TextureRect" parent="Jogo/Cenario/Castelo"]
+margin_left = -2314.0
+margin_top = 58.0
+margin_right = -2152.0
+margin_bottom = 385.0
+rect_scale = Vector2( 0.759223, 0.750823 )
+texture = ExtResource( 10 )
+
 [node name="Floresta" type="Node" parent="Jogo/Cenario"]
 
 [node name="ColorRect" type="ColorRect" parent="Jogo/Cenario/Floresta"]
@@ -131,18 +140,75 @@ margin_bottom = -2490.0
 rect_scale = Vector2( 151.032, 194.7 )
 color = Color( 0.0627451, 0.0392157, 0.196078, 1 )
 
-[node name="Pilar4" parent="Jogo/Cenario/Floresta" instance=ExtResource( 5 )]
-position = Vector2( -3890, -701 )
-scale = Vector2( 0.993958, 0.557625 )
+[node name="TextureRect2" type="TextureRect" parent="Jogo/Cenario/Floresta"]
+margin_left = -7032.0
+margin_top = -1550.0
+margin_right = -3032.0
+margin_bottom = 2450.0
+rect_scale = Vector2( 0.398737, 0.483991 )
+texture = ExtResource( 12 )
+
+[node name="TextureRect4" type="TextureRect" parent="Jogo/Cenario/Floresta"]
+margin_left = -5853.0
+margin_top = -1550.0
+margin_right = -1853.0
+margin_bottom = 2450.0
+rect_scale = Vector2( 0.398737, 0.483991 )
+texture = ExtResource( 12 )
+
+[node name="TextureRect5" type="TextureRect" parent="Jogo/Cenario/Floresta"]
+margin_left = -7697.0
+margin_top = -1550.0
+margin_right = -3697.0
+margin_bottom = 2450.0
+rect_scale = Vector2( 0.398737, 0.483991 )
+texture = ExtResource( 12 )
+
+[node name="TextureRect6" type="TextureRect" parent="Jogo/Cenario/Floresta"]
+margin_left = -6178.0
+margin_top = -898.0
+margin_right = -2178.0
+margin_bottom = 3102.0
+rect_scale = Vector2( 0.267324, 0.32448 )
+texture = ExtResource( 12 )
+
+[node name="TextureRect9" type="TextureRect" parent="Jogo/Cenario/Floresta"]
+margin_left = -5304.0
+margin_top = 158.0
+margin_right = -1304.0
+margin_bottom = 4158.0
+rect_rotation = 89.2727
+rect_scale = Vector2( 0.267324, 0.32448 )
+texture = ExtResource( 12 )
+
+[node name="TextureRect7" type="TextureRect" parent="Jogo/Cenario/Floresta"]
+margin_left = -8623.0
+margin_top = -1550.0
+margin_right = -4623.0
+margin_bottom = 2450.0
+rect_scale = Vector2( 0.398737, 0.483991 )
+texture = ExtResource( 12 )
+
+[node name="TextureRect8" type="TextureRect" parent="Jogo/Cenario/Floresta"]
+margin_left = -5202.0
+margin_top = -1421.0
+margin_right = -1202.0
+margin_bottom = 2579.0
+rect_scale = Vector2( 0.398737, 0.483991 )
+texture = ExtResource( 12 )
 
 [node name="Chão5" parent="Jogo/Cenario/Floresta" instance=ExtResource( 2 )]
 position = Vector2( -4870, 803 )
 scale = Vector2( 0.992092, 1 )
 
+[node name="Pilar4" parent="Jogo/Cenario/Floresta" instance=ExtResource( 5 )]
+position = Vector2( -3890, -701 )
+scale = Vector2( 0.993958, 0.557625 )
+
 [node name="Ataques" type="Node2D" parent="Jogo"]
 
 [node name="Bordas" parent="Jogo" instance=ExtResource( 1 )]
-position = Vector2( -3195, 209 )
+position = Vector2( -4213, 270 )
 speed = 500
 
 [node name="Camera2D" type="Camera2D" parent="Jogo/Bordas"]
@@ -182,11 +248,14 @@ position = Vector2( -2504, -340 )
 [node name="Inimigo7" parent="Jogo" instance=ExtResource( 6 )]
 position = Vector2( 2255, -738 )
 
+[node name="Inimigo8" parent="Jogo" instance=ExtResource( 6 )]
+position = Vector2( -3787, 348 )
+
 [node name="Limite" type="Position2D" parent="Jogo"]
 position = Vector2( -284, 2401 )
 
 [node name="Porta_castelo" type="Position2D" parent="Jogo"]
-position = Vector2( -3592, 62 )
+position = Vector2( -3586, 67 )
 
 [node name="HUD" type="CanvasLayer" parent="." groups=["HUD"]]
 script = ExtResource( 11 )
@@ -220,7 +289,6 @@ margin_top = 47.0
 margin_right = 597.0
 margin_bottom = 81.0
 custom_fonts/font = SubResource( 2 )
-text = "7"
 uppercase = true
 
 [node name="rosto" type="TextureRect" parent="HUD"]

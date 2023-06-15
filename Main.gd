@@ -9,10 +9,11 @@ var musica_cast=false
 
 func _ready() -> void:
 	currentScene = get_child(0)
-	porta_castelo=$Jogo/Porta_castelo
+	#porta_castelo=$Jogo/Porta_castelo
 	porta_castelo=$Jogo/Porta_castelo
 	sceneLimit = currentScene.get_node("Limite")
 	player = currentScene.get_node("Bordas")
+	get_tree().call_group("HUD", "mostra_area",area)
 	
 func _physics_process(delta: float) -> void:
 	if player.hp <= 0:
