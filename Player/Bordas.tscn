@@ -4,7 +4,7 @@
 [ext_resource path="res://Player/Bordas.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Ataques/laser.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Player/som_dano.mp3" type="AudioStream" id=4]
-[ext_resource path="res://Ataques/vermelho.png" type="Texture" id=5]
+[ext_resource path="res://Player/Angel wing.png" type="Texture" id=5]
 
 [sub_resource type="CanvasItemMaterial" id=15]
 
@@ -79,6 +79,6 @@ stream = ExtResource( 4 )
 volume_db = -37.56
 
 [node name="Sprite_asa" type="Sprite" parent="."]
-position = Vector2( -10.9675, 23 )
-scale = Vector2( 0.862967, 2.0031 )
+position = Vector2( -21.9351, 12 )
+scale = Vector2( 0.205487, 0.231027 )
 texture = ExtResource( 5 )

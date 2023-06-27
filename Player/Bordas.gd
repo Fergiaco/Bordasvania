@@ -59,10 +59,14 @@ func get_side_input():
 	
 	if velocity.x > 0:
 		sprite.play("Direita")
+		get_node( "Sprite_asa" ).set_flip_h( false )
+		get_node( "Sprite_asa" ).position.x = -21.935
 		direcao=Vector2(1,0)
 		
 	elif velocity.x < 0:
 		sprite.play("Esquerda")
+		get_node( "Sprite_asa" ).set_flip_h( true )
+		get_node( "Sprite_asa" ).position.x = 40.873
 		direcao=Vector2(-1,0)
 		
 	else:
