@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mus_castelo.mp3-cccbe834f51b25989c53af87de00d918.mp3str"
+
+[deps]
+
+source_file="res://Extra/mus_castelo.mp3"
+dest_files=[ "res://.import/mus_castelo.mp3-cccbe834f51b25989c53af87de00d918.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

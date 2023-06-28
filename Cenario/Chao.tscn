@@ -8,6 +8,7 @@ extents = Vector2( 1861, 421.25 )
 [node name="Chao" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( -10.8582, -7 )
 scale = Vector2( 12.6589, 8.59488 )
 texture = ExtResource( 1 )
@@ -15,3 +16,13 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -8, -9 )
 shape = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.270588, 0.152941, 0.0352941, 1 )
+margin_left = -1866.0
+margin_top = -427.0
+margin_right = 1855.0
+margin_bottom = 422.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2

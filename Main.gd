@@ -6,8 +6,10 @@ var player : KinematicBody2D
 var currentScene = null
 var area='floresta'
 var musica_cast=false
+var musica_floresta=true
 
 func _ready() -> void:
+	$musica_floresta.play()
 	currentScene = get_child(0)
 	#porta_castelo=$Jogo/Porta_castelo
 	porta_castelo=$Jogo/Porta_castelo
@@ -30,12 +32,18 @@ func _physics_process(delta: float) -> void:
 			area='floresta'
 			musica_cast=false
 			$musica_castelo.stop()
+			if not musica_floresta:
+				musica_floresta=true
+				$musica_floresta.play()
 			
 		else:
 			area='castelo'
+			musica_floresta=false
+			$musica_floresta.stop()
 			if not musica_cast:
-				musica_cast=true				
+				musica_cast=true			
 				$musica_castelo.play()
+				
 		get_tree().call_group("HUD", "mostra_area",area)
 		
 			#get_tree().change_scene("/root/Main/Inicio")

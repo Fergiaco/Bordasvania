@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mus_floresta.mp3-b0edb3eb51a89dacda691d3e7dc623aa.mp3str"
+
+[deps]
+
+source_file="res://Extra/mus_floresta.mp3"
+dest_files=[ "res://.import/mus_floresta.mp3-b0edb3eb51a89dacda691d3e7dc623aa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

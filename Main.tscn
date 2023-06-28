@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Bordas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Cenario/Chao.tscn" type="PackedScene" id=2]
@@ -6,12 +6,14 @@
 [ext_resource path="res://Cenario/Plataforma.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Cenario/Pilar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Inimigos/Inimigo.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Extra/musica.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Extra/mus_castelo.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Player/rosto.png" type="Texture" id=8]
 [ext_resource path="res://Fonte/Xolonium-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Cenario/vitral.png" type="Texture" id=10]
 [ext_resource path="res://HUD.gd" type="Script" id=11]
 [ext_resource path="res://Cenario/arvore1.png" type="Texture" id=12]
+[ext_resource path="res://Cenario/Parede_castelo.png" type="Texture" id=13]
+[ext_resource path="res://Extra/mus_floresta.mp3" type="AudioStream" id=14]
 
 [sub_resource type="Theme" id=3]
 
@@ -40,6 +42,18 @@ margin_right = 8221.0
 margin_bottom = 3506.0
 rect_scale = Vector2( 1.24723, 1.29681 )
 color = Color( 0.156863, 0.0352941, 0.0784314, 1 )
+
+[node name="TextureRect2" type="TextureRect" parent="Jogo/Cenario/Castelo"]
+anchor_right = 0.005
+anchor_bottom = 0.004
+margin_left = -3624.0
+margin_top = -2525.0
+margin_right = 4737.88
+margin_bottom = 2894.6
+texture = ExtResource( 13 )
+stretch_mode = 2
+flip_h = true
+flip_v = true
 
 [node name="Chão" parent="Jogo/Cenario/Castelo" instance=ExtResource( 2 )]
 position = Vector2( -1778, 803 )
@@ -176,10 +190,10 @@ rect_scale = Vector2( 0.267324, 0.32448 )
 texture = ExtResource( 12 )
 
 [node name="TextureRect7" type="TextureRect" parent="Jogo/Cenario/Floresta"]
-margin_left = -8623.0
-margin_top = -1550.0
-margin_right = -4623.0
-margin_bottom = 2450.0
+margin_left = -8265.0
+margin_top = -1530.0
+margin_right = -4265.0
+margin_bottom = 2470.0
 rect_scale = Vector2( 0.398737, 0.483991 )
 texture = ExtResource( 12 )
 
@@ -192,11 +206,11 @@ rect_scale = Vector2( 0.398737, 0.483991 )
 texture = ExtResource( 12 )
 
 [node name="Chão5" parent="Jogo/Cenario/Floresta" instance=ExtResource( 2 )]
-position = Vector2( -4870, 803 )
+position = Vector2( -5416, 803 )
 scale = Vector2( 0.992092, 1 )
 
 [node name="Pilar4" parent="Jogo/Cenario/Floresta" instance=ExtResource( 5 )]
-position = Vector2( -3871, -701 )
+position = Vector2( -3878, -701 )
 scale = Vector2( 0.993958, 0.557625 )
 
 [node name="Ataques" type="Node2D" parent="Jogo"]
@@ -244,6 +258,12 @@ position = Vector2( 2255, -738 )
 
 [node name="Inimigo8" parent="Jogo" instance=ExtResource( 6 )]
 position = Vector2( -3787, 348 )
+
+[node name="Inimigo9" parent="Jogo" instance=ExtResource( 6 )]
+position = Vector2( -4979, 346 )
+
+[node name="Inimigo10" parent="Jogo" instance=ExtResource( 6 )]
+position = Vector2( -6282, 343 )
 
 [node name="Limite" type="Position2D" parent="Jogo"]
 position = Vector2( -284, 2401 )
@@ -294,10 +314,10 @@ rect_scale = Vector2( 0.149925, 0.149925 )
 texture = ExtResource( 8 )
 
 [node name="Score" type="Label" parent="HUD"]
-margin_left = 769.0
-margin_top = 20.0
-margin_right = 832.0
-margin_bottom = 34.0
+margin_left = 1299.0
+margin_top = 32.0
+margin_right = 1362.0
+margin_bottom = 46.0
 rect_scale = Vector2( 2.84471, 2.84471 )
 custom_fonts/font = SubResource( 1 )
 text = "Score: 0"
@@ -305,3 +325,7 @@ text = "Score: 0"
 [node name="musica_castelo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -35.071
+
+[node name="musica_floresta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -21.553
