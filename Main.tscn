@@ -48,13 +48,8 @@ position = Vector2( -1778, 803 )
 position = Vector2( 3765, 158 )
 
 [node name="Chão3" parent="Jogo/Cenario/Castelo" instance=ExtResource( 2 )]
-position = Vector2( 1601, 2440 )
-
-[node name="Chão4" parent="Jogo/Cenario/Castelo" instance=ExtResource( 2 )]
-position = Vector2( 977, 4272 )
-
-[node name="Chão6" parent="Jogo/Cenario/Castelo" instance=ExtResource( 2 )]
-position = Vector2( 4694, 4277 )
+position = Vector2( 1628, 1645 )
+scale = Vector2( 1, 1.00362 )
 
 [node name="Plataforma2" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( -15, -126 )
@@ -66,13 +61,16 @@ position = Vector2( 776, -418 )
 position = Vector2( 1316, -577 )
 
 [node name="Plataforma10" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
-position = Vector2( 1281, 818 )
+position = Vector2( 916, 974 )
+
+[node name="Plataforma19" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
+position = Vector2( 1168, 782 )
 
 [node name="Plataforma11" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
-position = Vector2( 338, 438 )
+position = Vector2( 320, 456 )
 
 [node name="Plataforma12" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
-position = Vector2( 802, 629 )
+position = Vector2( 667, 620 )
 
 [node name="Plataforma3" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( 321, -283 )
@@ -89,10 +87,6 @@ position = Vector2( -1655, -147 )
 [node name="Pilar1" parent="Jogo/Cenario/Castelo" instance=ExtResource( 5 )]
 position = Vector2( -3330, -701 )
 scale = Vector2( 0.993958, 0.557625 )
-
-[node name="Pilar3" parent="Jogo/Cenario/Castelo" instance=ExtResource( 5 )]
-position = Vector2( 3553, 3353 )
-scale = Vector2( 0.414777, 0.414777 )
 
 [node name="Plataforma13" parent="Jogo/Cenario/Castelo" instance=ExtResource( 4 )]
 position = Vector2( -2685, -313 )
@@ -202,13 +196,13 @@ position = Vector2( -4870, 803 )
 scale = Vector2( 0.992092, 1 )
 
 [node name="Pilar4" parent="Jogo/Cenario/Floresta" instance=ExtResource( 5 )]
-position = Vector2( -3890, -701 )
+position = Vector2( -3871, -701 )
 scale = Vector2( 0.993958, 0.557625 )
 
 [node name="Ataques" type="Node2D" parent="Jogo"]
 
 [node name="Bordas" parent="Jogo" instance=ExtResource( 1 )]
-position = Vector2( -4213, 270 )
+position = Vector2( -6427, 278 )
 speed = 500
 
 [node name="Camera2D" type="Camera2D" parent="Jogo/Bordas"]
@@ -240,7 +234,7 @@ position = Vector2( -554, 67 )
 position = Vector2( 2509, -293 )
 
 [node name="Inimigo5" parent="Jogo" instance=ExtResource( 6 )]
-position = Vector2( 1821, 1962 )
+position = Vector2( 1187, 1128 )
 
 [node name="Inimigo6" parent="Jogo" instance=ExtResource( 6 )]
 position = Vector2( -2504, -340 )

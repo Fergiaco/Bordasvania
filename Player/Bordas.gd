@@ -22,6 +22,7 @@ var velocity = Vector2.ZERO
 var rotation_dir = 0
 
 var pode_atirar=true
+var pode_planar=false
 var pode_bater=true
 var invencivel=false
 
@@ -100,10 +101,8 @@ func get_side_input():
 		pode_bater=false
 		timer_espada.start()
 		
-	if Input.is_action_pressed("Planar"):
+	if Input.is_action_pressed("Planar") and pode_planar:
 		$Sprite_asa.visible=true
-		#a.position = $Pos_asa.global_position
-		#a.get_node("Sprite_asa").visible=true
 		if velocity.y>10:
 			gravity=500
 		else:
