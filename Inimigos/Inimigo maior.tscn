@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player/som_dano.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Player/Bordas.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Inimigos/Inimigo maior.gd" type="Script" id=3]
+[ext_resource path="res://Player/Angel wing.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 45.5, 123.5 )
+
+[node name="Inimigo maior" type="KinematicBody2D" groups=["Inimigos"]]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+modulate = Color( 0.623529, 0.0392157, 0.0392157, 1 )
+position = Vector2( -6.00002, -67 )
+scale = Vector2( 0.192986, 0.240653 )
+frames = ExtResource( 2 )
+animation = "Direita"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.5, -100.5 )
+shape = SubResource( 1 )
+
+[node name="som_dano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -23.941
+pitch_scale = 0.44
+
+[node name="Sprite_asa" type="Sprite" parent="."]
+position = Vector2( -62, -153 )
+scale = Vector2( 0.342743, 0.348847 )
+texture = ExtResource( 4 )

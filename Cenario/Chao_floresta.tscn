@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Cenario/grama.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2326, 421.25 )
+
+[node name="Chao_floresta" type="StaticBody2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -2802.0
+margin_top = -432.0
+margin_right = 1850.0
+margin_bottom = 417.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -474, -10 )
+shape = SubResource( 1 )

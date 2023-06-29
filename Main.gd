@@ -1,6 +1,7 @@
 extends Node2D
 
 var sceneLimit : Position2D
+var final : Position2D
 var porta_castelo : Position2D
 var player : KinematicBody2D
 var currentScene = null
@@ -14,6 +15,7 @@ func _ready() -> void:
 	#porta_castelo=$Jogo/Porta_castelo
 	porta_castelo=$Jogo/Porta_castelo
 	sceneLimit = currentScene.get_node("Limite")
+	final = currentScene.get_node("Final")
 	player = currentScene.get_node("Bordas")
 	get_tree().call_group("HUD", "mostra_area",area)
 	
@@ -26,6 +28,9 @@ func _physics_process(delta: float) -> void:
 		
 	if player.position.y > sceneLimit.position.y:
 		get_tree().change_scene("res://GameOver.tscn")
+	
+	if player.position.x > final.position.x:
+		get_tree().change_scene("res://Final.tscn")
 	
 	if player.position.y > porta_castelo.position.y:
 		if player.position.x < porta_castelo.position.x:

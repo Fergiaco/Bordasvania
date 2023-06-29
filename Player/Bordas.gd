@@ -130,6 +130,11 @@ func detecta_colisao():
 		if collision.collider.is_in_group("Inimigos"):
 			tomou_dano()
 			
+		if collision.collider.is_in_group("Itens"):
+			print('passou na asa')
+			get_tree().call_group("Itens", "coletado")
+			pode_planar=true
+			
 func stop_inv():
 	invencivel=false
 	animacao_dano.stop()
